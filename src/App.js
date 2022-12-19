@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import store from "./store";
+import { Provider } from "react-redux";
+import AutoCompleteBox from './component/AutoComplete';
+import RecentSearch from './component/RecentSearch';
+import { Box, Container, Grid } from '@mui/material';
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Provider store={store}>
+      <Box
+        sx={{
+          height: 55,
+          backgroundColor: '#ffc83d',
+          '&:hover': {
+            backgroundColor: '#ffc83d'
+          },
+        }}
+      /> 
+      <Container maxWidth='100%' > 
+           
+      <Grid maxWidth='90%' paddingTop={5}
+        container
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+        <Grid md={7}>
+          <AutoCompleteBox/>
+        </Grid>
+        <Grid md={5}>
+          <RecentSearch/>
+        </Grid>
+
+      </Grid>
+      </Container>
+    </Provider>
   );
 }
 
