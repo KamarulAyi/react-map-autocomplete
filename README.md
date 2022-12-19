@@ -1,6 +1,7 @@
 React Map Autocomplete
 
 This project was created with React and Redux
+Node version used : v18.12.1
 
 ## How to use this project
 
